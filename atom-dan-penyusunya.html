@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD Praktikum Virtual - Partikel Dasar Atom</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --proton: #e67e22;
+            --electron: #2980b9;
+            --neutron: #7f8c8d;
+            --bg: #f8f9fa;
+            --success: #2ecc71;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--bg);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        header {
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            color: var(--primary);
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+
+        .meta-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            background: #f1f3f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .meta-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-field label {
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .meta-field input {
+            border: none;
+            border-bottom: 2px solid #ccc;
+            background: transparent;
+            padding: 5px 0;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .instructions {
+            background: #e8f4f8;
+            border-left: 4px solid var(--accent);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .instructions h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .phet-container {
+            position: relative;
+            width: 100%;
+            padding-top: 60%;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .phet-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            background: #fff;
+        }
+
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .badge-proton { background-color: var(--proton); }
+        .badge-electron { background-color: var(--electron); }
+        .badge-neutron { background-color: var(--neutron); }
+
+        textarea, input[type="text"] {
+            width: 100%;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            padding: 8px;
+            box-sizing: border-box;
+            font-family: inherit;
+            resize: vertical;
+        }
+
+        textarea:focus, input[type="text"]:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+
+        .reflection-box {
+            background: #fdf2e9;
+            border: 1px solid #fadbd8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        .reflection-box h3 {
+            color: #e67e22;
+            margin-top: 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .btn-print {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-print:hover {
+            background: #2980b9;
+        }
+
+        .btn-submit {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background: #27ae60;
+        }
+
+        #status-message {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 6px;
+            display: none;
+            font-weight: bold;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; padding: 0; }
+            .action-buttons, .phet-container { display: none; }
+            textarea, input[type="text"] { border: none; border-bottom: 1px solid #000; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="action-buttons">
+        <button class="btn btn-print" onclick="window.print()">🖨️ Cetak / Simpan ke PDF</button>
+    </div>
+
+    <header>
+        <h1>LEMBAR KERJA PESERTA DIDIK (LKPD)</h1>
+        <div style="font-size: 16px; color: #555; font-weight: 600;">Eksplorasi Virtual Lab: Menemu Peran Partikel Penyusun Atom</div>
+    </header>
+
+    <form id="lkpdForm">
+        <div class="meta-info">
+            <div class="meta-field">
+                <label>Kelompok / Nama</label>
+                <input type="text" name="nama" placeholder="Masukkan nama anggota..." required>
+            </div>
+            <div class="meta-field">
+                <label>Kelas</label>
+                <input type="text" name="kelas" placeholder="Contoh: XI-1" required>
+            </div>
+            <div class="meta-field">
+                <label>Tanggal</label>
+                <input type="text" name="tanggal" placeholder="DD/MM/YYYY" required>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>📍 Petunjuk Praktikum:</h3>
+            <ol style="margin: 0; padding-left: 20px;">
+                <li>Gunakan simulasi <b>PhET Build an Atom</b> langsung pada layar di bawah ini (Pilih tab <b>"Buat Atom"</b>).</li>
+                <li>Lakukan aksi eksperimen sesuai petunjuk pada kolom ke-2 tabel.</li>
+                <li>Amati perubahan di layar PhET dan lengkapi kolom-kolom yang kosong secara berurutan!</li>
+            </ol>
+        </div>
+
+        <!-- SIMULASI PHET EMBED -->
+        <div class="phet-container">
+            <iframe src="https://phet.colorado.edu/sims/html/build-an-atom/latest/build-an-atom_all.html?locale=id" allowfullscreen></iframe>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 18%;">Nama Partikel</th>
+                    <th style="width: 32%;">Buktikan Lewat PhET!<br><small style="font-weight:normal">(Aksi & Hasil di Layar)</small></th>
+                    <th style="width: 25%;">Fungsi Utama Partikel<br><small style="font-weight:normal">(Pilih dari opsi di bawah)</small></th>
+                    <th style="width: 25%;">Gunanya Dalam Kehidupan Nyata</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- PROTON -->
+                <tr>
+                    <td>
+                        <b>PROTON</b><br>
+                        <span class="badge badge-proton">(+) Positif</span>
+                    </td>
+                    <td>
+                        1. Masukkan 1 Proton ke inti. Nama unsurnya menjadi: <br>
+                        <input type="text" name="proton_1" placeholder="Jawab..." style="margin: 5px 0 10px 0;">
+                        2. Tambahkan lagi jadi 2 Proton. Nama unsurnya berubah menjadi: <br>
+                        <input type="text" name="proton_2" placeholder="Jawab..." style="margin-top: 5px;">
+                    </td>
+                    <td>
+                        <textarea name="fungsi_proton" rows="4" placeholder="Tulis fungsi utama proton berdasarkan hasil percobaan..."></textarea>
+                    </td>
+                    <td style="font-size: 13px; color: #444; background: #fafafa;">
+                        Menentukan <b>keanekaragaman materi</b> di alam semesta. Tanpa variasi jumlah proton, tidak akan ada bedanya antara emas, besi, dan oksigen!
+                    </td>
+                </tr>
+
+                <!-- ELEKTRON -->
+                <tr>
+                    <td>
+                        <b>ELEKTRON</b><br>
+                        <span class="badge badge-electron">(-) Negatif</span>
+                    </td>
+                    <td>
+                        1. Buat atom dengan 3 Proton & 3 Elektron (Status: <i>Atom Netral</i>).<br>
+                        2. Buang 1 Elektron keluar dari lintasan.<br>
+                        Status muatan di panel berubah menjadi: <br>
+                        <input type="text" name="elektron_1" placeholder="Jawab..." style="margin-top: 5px;">
+                    </td>
+                    <td>
+                        <textarea name="fungsi_elektron" rows="4" placeholder="Tulis fungsi utama elektron berdasarkan hasil percobaan..."></textarea>
+                    </td>
+                    <td style="font-size: 13px; color: #444; background: #fafafa;">
+                        Menjadi sumber <b>arus listrik</b>! Karena elektron letaknya di luar dan lincah, manusia bisa mengalirkannya untuk menyalakan HP dan lampu.
+                    </td>
+                </tr>
+
+                <!-- NEUTRON -->
+                <tr>
+                    <td>
+                        <b>NEUTRON</b><br>
+                        <span class="badge badge-neutron">(0) Netral</span>
+                    </td>
+                    <td>
+                        1. Masukkan 1 Neutron ke dalam inti atom.<br>
+                        - Apakah nama unsurnya berubah? (Ya/Tidak): <br>
+                        <input type="text" name="neutron_nama" placeholder="Jawab..." style="margin: 3px 0 8px 0;">
+                        - Apakah angka Bilangan Massanya bertambah? (Ya/Tidak): <br>
+                        <input type="text" name="neutron_massa" placeholder="Jawab..." style="margin-top: 3px;">
+                    </td>
+                    <td>
+                        <textarea name="fungsi_neutron" rows="4" placeholder="Tulis fungsi utama neutron berdasarkan hasil percobaan..."></textarea>
+                    </td>
+                    <td style="font-size: 13px; color: #444; background: #fafafa;">
+                        Menjaga <b>kestabilan inti atom</b>. Dimanfaatkan manusia untuk teknologi medis (Rontgen) dan mendeteksi umur fosil purbakala.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="background: #eef9f1; border-left: 4px solid #2ecc71; padding: 10px 15px; border-radius: 0 8px 8px 0; font-size: 13px; margin-bottom: 20px;">
+            <b>💡 Pilihan Opsi Fungsi (Gunakan untuk mengisi kolom 3):</b><br>
+            • Penentu Identitas/Nama Unsur &nbsp;&nbsp;|&nbsp;&nbsp; • Penentu Muatan Listrik &nbsp;&nbsp;|&nbsp;&nbsp; • Perekat Inti & Penambah Massa
+        </div>
+
+        <div class="reflection-box">
+            <h3>💬 Refleksi Akhir Pembelajaran</h3>
+            <p style="margin-bottom: 8px; font-size: 14px;"><b>Pertanyaan:</b> Apa yang terjadi pada sebuah atom jika salah satu partikelnya tidak seimbang atau hilang?</p>
+            <textarea name="refleksi" rows="3" placeholder="Tuliskan pendapat kelompokmu di sini..."></textarea>
+        </div>
+
+        <div class="action-buttons">
+            <button type="submit" class="btn btn-submit" id="btnSubmit">🚀 Kirim Jawaban ke Guru</button>
+        </div>
+        <div id="status-message"></div>
+    </form>
+</div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzlLOrvMM_YFNUUi-ruQ7XNVmKKK4Ajthe6oC6Oq3yvL8NNGpw3bAv3rSkdA0aVe7Tw/exec';
+    const form = document.getElementById('lkpdForm');
+    const btnSubmit = document.getElementById('btnSubmit');
+    const statusMsg = document.getElementById('status-message');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        
+        btnSubmit.disabled = true;
+        btnSubmit.innerText = '⏳ Mengirim Jawaban...';
+        statusMsg.style.display = 'none';
+
+        // Mengubah Form Data menjadi URLSearchParams agar terbaca lancar oleh e.parameter Apps Script
+        const formData = new FormData(form);
+        const searchParams = new URLSearchParams(formData);
+
+        fetch(scriptURL, { 
+            method: 'POST', 
+            body: searchParams,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+        .then(response => {
+            btnSubmit.disabled = false;
+            btnSubmit.innerText = '🚀 Kirim Jawaban ke Guru';
+            statusMsg.style.display = 'block';
+            statusMsg.style.backgroundColor = '#d4edda';
+            statusMsg.style.color = '#155724';
+            statusMsg.innerText = '✅ Jawaban berhasil dikirim dan tersimpan di Google Sheet! Terima kasih.';
+            form.reset();
+        })
+        .catch(error => {
+            btnSubmit.disabled = false;
+            btnSubmit.innerText = '🚀 Kirim Jawaban ke Guru';
+            statusMsg.style.display = 'block';
+            statusMsg.style.backgroundColor = '#f8d7da';
+            statusMsg.style.color = '#721c24';
+            statusMsg.innerText = '❌ Gagal mengirim jawaban. Silakan periksa koneksi internet atau cetak ke PDF.';
+            console.error('Error!', error.message);
+        });
+    });
+</script>
+
+</body>
+</html>
