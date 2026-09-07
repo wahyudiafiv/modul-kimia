@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Modul Interaktif: Hakikat Ilmu Kimia (Studi Kasus Air)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Header / Banner -->
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-10 px-4 shadow-lg text-center">
+        <div class="max-w-4xl mx-auto">
+            <span class="bg-blue-900/60 text-blue-100 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Modul Kimia SMA</span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold mt-3 mb-2 leading-tight">Hakikat Ilmu Kimia</h1>
+            <p class="text-blue-100 text-base sm:text-lg">Memahami Susunan, Struktur, Sifat, dan Energi Materi Melalui Studi Kasus Molekul Air (H₂O)</p>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow space-y-8">
+
+        <!-- Pengertian Hakikat Ilmu Kimia -->
+        <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-100">
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="p-3 bg-blue-100 text-blue-600 rounded-xl">
+                    <i class="fa-solid fa-flask text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-800">Apa itu Hakikat Ilmu Kimia?</h2>
+            </div>
+            <p class="text-slate-600 leading-relaxed text-base sm:text-lg">
+                Ilmu Kimia adalah ilmu yang mempelajari **"Bahan, Bentuk, Sifat, dan Energi"** dari benda-benda di sekitar kita. Agar mudah membayangkannya, mari kita bedah zat yang paling sering kita temui setiap hari: <span class="font-semibold text-blue-600">Air (H₂O)</span>.
+            </p>
+        </section>
+
+        <!-- 3D Viewer Section (PhET Interactive Simulation) -->
+        <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-md border border-blue-100">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
+                <div>
+                    <h3 class="text-xl font-bold text-blue-900 flex items-center gap-2">
+                        <i class="fa-solid fa-cube text-blue-600"></i> Model 3D Interaktif Molekul Air (H₂O)
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-500">Gunakan jari atau mouse untuk memutar 360°, merotasi, dan mengeksplorasi bentuk molekul H₂O.</p>
+                </div>
+                <span class="bg-indigo-50 text-indigo-700 text-xs font-semibold px-2.5 py-1 rounded-md border border-indigo-200">Simulasi PhET 3D</span>
+            </div>
+
+            <!-- Frame 3D Model PhET -->
+            <div class="w-full h-96 rounded-xl overflow-hidden border border-slate-200 shadow-inner bg-slate-900">
+                <iframe 
+                    src="https://phet.colorado.edu/sims/html/molecule-shapes/latest/molecule-shapes_all.html?locale=in&page=real-molecules" 
+                    class="w-full h-full" 
+                    scrolling="no" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Grid 4 Pilar Hakikat Kimia (Bahasa Sederhana) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- 1. Susunan -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                <div class="flex items-center space-x-3 mb-3">
+                    <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center font-bold text-lg">1</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Susunan Materi</h3>
+                        <span class="text-xs text-emerald-600 font-medium">💡 = "Bahan Penyusunnya Apa?"</span>
+                    </div>
+                </div>
+                <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                    Susunan itu ibarat resep atau bahan dasar pembentuk benda.
+                </p>
+                <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100 text-xs text-emerald-900 space-y-2">
+                    <p><strong>Bahan Pembentuk Air (H₂O):</strong></p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li><strong>2 Atom Hidrogen (H)</strong></li>
+                        <li><strong>1 Atom Oksigen (O)</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2. Struktur -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                <div class="flex items-center space-x-3 mb-3">
+                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold text-lg">2</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Struktur Materi</h3>
+                        <span class="text-xs text-blue-600 font-medium">💡 = "Bentuk Hasil Rangkaiannya"</span>
+                    </div>
+                </div>
+                <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                    Struktur adalah tata letak atau bentuk geometri saat atom-atom itu dirangkai.
+                </p>
+                <div class="bg-blue-50 p-4 rounded-xl border border-blue-100 text-xs text-blue-900 space-y-2">
+                    <p><strong>Bentuk Rangkaian Air:</strong></p>
+                    <p>1 Atom Oksigen berada di tengah lalu mengikat 2 Atom Hidrogen dengan posisi miring, sehingga membentuk huruf <strong>V (Bengkok)</strong> seperti ketapel.</p>
+                </div>
+            </div>
+
+            <!-- 3. Sifat -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                <div class="flex items-center space-x-3 mb-3">
+                    <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center font-bold text-lg">3</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Sifat Materi</h3>
+                        <span class="text-xs text-amber-600 font-medium">💡 = "Dampak Dari Bentuk V Tadi"</span>
+                    </div>
+                </div>
+                <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                    Gara-gara bentuknya V, molekul air jadi punya perilaku yang unik!
+                </p>
+                <div class="bg-amber-50 p-4 rounded-xl border border-amber-100 text-xs text-amber-900 space-y-2">
+                    <p><strong>Perilaku/Sifat Unik Air:</strong></p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li><strong>Bersifat Polar (Seperti Magnet):</strong> Karena bentuknya V, muatannya tidak seimbang sehingga air bisa menempel dan menarik zat lain.</li>
+                        <li><strong>Pelarut Jagoan:</strong> Sifat "magnet" ini membuat air pinter banget melarutkan garam, gula, dan sirup.</li>
+                        <li><strong>Berwujud Cair & Bening:</strong> Molekulnya saling menarik tapi tetap fleksibel mengalir dan bisa ditembus cahaya.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 4. Energi -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                <div class="flex items-center space-x-3 mb-3">
+                    <div class="w-10 h-10 bg-rose-100 text-rose-600 rounded-lg flex items-center justify-center font-bold text-lg">4</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Energi Materi</h3>
+                        <span class="text-xs text-rose-600 font-medium">💡 = "Panas Yang Dibutuhkan / Dilepas"</span>
+                    </div>
+                </div>
+                <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                    Energi menjelaskan berapa banyak panas yang dibutuhkan zat untuk berubah bentuk.
+                </p>
+                <div class="bg-rose-50 p-4 rounded-xl border border-rose-100 text-xs text-rose-900 space-y-2">
+                    <p><strong>Perubahan Panas pada Air:</strong></p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li><strong>Menyerap Panas:</strong> Es batu butuh panas agar bisa meleleh jadi air, dan air butuh panas untuk mendidih jadi uap.</li>
+                        <li><strong>Menyimpan Panas:</strong> Air sangat kuat menahan panas, makanya laut bisa menjaga suhu bumi tetap sejuk.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SEKSI TUGAS EKSPLORASI MANDIRI -->
+        <section class="bg-gradient-to-br from-slate-900 to-indigo-950 text-white p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-800">
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="p-3 bg-indigo-500/20 text-indigo-400 rounded-xl border border-indigo-500/30">
+                    <i class="fa-solid fa-microscope text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold">Tugas Eksplorasi: Bedah Benda Sehari-hari</h2>
+                    <p class="text-slate-400 text-xs sm:text-sm">Bawa 1 benda bebas dari sekitar Anda, lalu analisis senyawa utamanya!</p>
+                </div>
+            </div>
+
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                Pilihlah satu benda yang ada di sekitar Anda (misal: isi korek api gas, cuka dapur, atau minuman berkarbonasi). Gunakan instruksi (*prompt*) di bawah ini untuk berdiskusi dengan AI, lalu buktikan bentuk molekulnya pada **Simulasi PhET 3D** di atas.
+            </p>
+
+            <!-- Box Prompt AI -->
+            <div class="bg-slate-800/90 p-4 sm:p-5 rounded-xl border border-slate-700 mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-xs font-semibold text-indigo-400 uppercase tracking-wider flex items-center gap-1.5">
+                        <i class="fa-solid fa-terminal"></i> Salin Prompt Ini Ke AI:
+                    </span>
+                    <button onclick="copyPrompt()" class="text-xs bg-indigo-600 hover:bg-indigo-500 text-white px-2.5 py-1 rounded-md transition flex items-center gap-1">
+                        <i class="fa-solid fa-copy"></i> Copy Prompt
+                    </button>
+                </div>
+                <pre id="ai-prompt" class="text-xs sm:text-sm text-slate-200 whitespace-pre-wrap font-mono bg-slate-900/60 p-3 rounded-lg border border-slate-800">Tolong bedah benda [NAMA BENDA ANDA] berdasarkan 4 pilar Hakikat Ilmu Kimia:
+1. Susunan: Fokus pada 1 senyawa kimia utama/dominan yang menyusun benda ini (sebutkan rumus kimia dan unsur penyusunnya).
+2. Struktur: Bagaimana bentuk geometri molekul dari senyawa dominan tersebut? (Apakah Linear, Bent/V, Tetrahedral, dll., dan berapa sudut ikatannya?).
+3. Sifat: Bagaimana bentuk molekul tersebut mempengaruhi sifat fisika/kimia benda ini?
+4. Energi: Perubahan energi/kalor apa yang menyertai benda/senyawa ini dalam kehidupan sehari-hari?</pre>
+            </div>
+
+            <!-- Langkah Kerja -->
+            <div class="space-y-2 text-xs sm:text-sm text-slate-300">
+                <p class="font-semibold text-white">Langkah Pengerjaan Tugas:</p>
+                <ol class="list-decimal list-inside space-y-1.5 pl-1">
+                    <li>Ganti tulisan <code class="bg-slate-800 px-1.5 py-0.5 rounded text-indigo-300">[NAMA BENDA ANDA]</code> dengan benda yang Anda amati.</li>
+                    <li>Jalankan prompt tersebut ke AI (Gemini/ChatGPT).</li>
+                    <li>Buka kembali **Simulasi PhET 3D** di atas, pilih nama senyawa tersebut pada menu <code class="bg-slate-800 px-1.5 py-0.5 rounded text-indigo-300">Molecule</code> untuk membuktikan bentuk geometrinya secara langsung.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Kuis Refleksi Ringkas -->
+        <section class="bg-slate-900 text-white p-6 sm:p-8 rounded-2xl shadow-lg">
+            <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+                <i class="fa-solid fa-circle-question text-yellow-400"></i> Uji Pemahaman Mandiri
+            </h3>
+            <p class="text-slate-300 text-sm mb-6">Mengapa air (H₂O) memiliki sifat polar dan dapat melarutkan garam?</p>
+            
+            <div class="space-y-3 text-sm">
+                <button onclick="checkAnswer(false, this)" class="w-full text-left p-3.5 bg-slate-800 hover:bg-slate-700 rounded-xl transition border border-slate-700">
+                    A. Karena tersusun dari gas hidrogen dan oksigen murni.
+                </button>
+                <button onclick="checkAnswer(true, this)" class="w-full text-left p-3.5 bg-slate-800 hover:bg-slate-700 rounded-xl transition border border-slate-700">
+                    B. Karena memiliki struktur molekul geometri bentuk V yang tidak simetris sehingga membuat molekulnya bekerja seperti magnet kecil (polar).
+                </button>
+                <button onclick="checkAnswer(false, this)" class="w-full text-left p-3.5 bg-slate-800 hover:bg-slate-700 rounded-xl transition border border-slate-700">
+                    C. Karena air berbentuk cair dan wujudnya bening.
+                </button>
+            </div>
+            <div id="quiz-result" class="mt-4 hidden p-3 rounded-xl text-sm font-semibold"></div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-400 text-center py-6 border-t border-slate-700 text-sm">
+        <p>© E-Modul Interaktif Kimia - SMAN 1 Way Jepara</p>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        function checkAnswer(isCorrect, element) {
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.classList.remove('hidden', 'bg-emerald-500/20', 'text-emerald-300', 'bg-rose-500/20', 'text-rose-300');
+            
+            if (isCorrect) {
+                resultDiv.classList.add('bg-emerald-500/20', 'text-emerald-300');
+                resultDiv.innerHTML = '<i class="fa-solid fa-circle-check"></i> Jawaban Benar! Bentuk V membuat muatannya tidak seimbang sehingga bertindak seperti magnet kecil (polar) yang dapat menarik zat lain.';
+            } else {
+                resultDiv.classList.add('bg-rose-500/20', 'text-rose-300');
+                resultDiv.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> Kurang tepat. Coba perhatikan kembali hubungan antara bentuk V dan sifat polar (magnetik) air.';
+            }
+        }
+
+        function copyPrompt() {
+            const promptText = document.getElementById('ai-prompt').innerText;
+            navigator.clipboard.writeText(promptText).then(() => {
+                alert('Prompt berhasil disalin! Tinggal tempel (paste) ke AI.');
+            });
+        }
+    </script>
+</body>
+</html>
